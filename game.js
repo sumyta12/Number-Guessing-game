@@ -122,8 +122,9 @@ let valueoneinputcheck = false;
 
 btn.forEach((btnitem) => {
   btnitem.addEventListener("click", (e) => {
+    const audio = new Audio("./sound.mp3");
+    audio.play();
     const playerID = e.target.id;
-
     const cardtitle = e.target.parentElement.parentElement.children[0];
     const getinputtext = e.target.parentElement.children[0];
     const input = parseInt(getinputtext.value);
@@ -185,7 +186,7 @@ function winnerrenderchecker() {
       modalelementreturn("Player 2 is  Winner");
     } else if (playerthree.functionchecker) {
       modalelementreturn("Player 3 is  Winner");
-    }else{
+    } else {
       modalelementreturn("Player 1 is  Winner");
     }
   }
