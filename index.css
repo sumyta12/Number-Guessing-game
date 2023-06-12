@@ -1,0 +1,60 @@
+:root {
+  --primary-font-family: "Press Start 2P", cursive;
+  --font-size: 10;
+  --error-font-family: "Patua One", cursive;
+  --error-font-color: rgba(101, 10, 10, 0.607);
+}
+
+.font-family-press {
+  font-family: var(--primary-font-family);
+}
+
+.font-family-patua {
+  font-family: var(--error-font-family);
+}
+.font-bold {
+  font-size: var(--font-size + 20) px;
+}
+.font-extra-bold {
+  font-size: 50px !important;
+}
+.font-medium {
+  font-size: var(--font-size + 2) px;
+}
+.font-red-color {
+  color: var(--error-font-color);
+}
+input::placeholder {
+  font-family: var(--primary-font-family);
+  font-size: 10px;
+}
+
+.card-display-output .card {
+  border: 5px solid black !important;
+}
+i {
+  padding: 10px;
+  background-color: #ffc107;
+  color: white;
+  border-radius: 5px;
+}
+body {
+  background-color: #ffc107 !important;
+}
+.card-display-output {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100vh;
+}
+.modal-custome-design {
+  width: 100%;
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+ 
+  transform: translate(-50%, -50%) !important;
+}
+.modal-custome-design .card{
+  height: 25rem !important;
+}
