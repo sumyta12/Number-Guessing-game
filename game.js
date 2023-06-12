@@ -148,6 +148,7 @@ btn.forEach((btnitem) => {
           if (playertwo.countchecker === 0) {
             e.target.style.color = "red";
             getinputtext.disabled = true;
+            getinputtext.value = "Number Taken";
             e.target.style.cursor = "not-allowed";
           }
         } else {
@@ -160,6 +161,7 @@ btn.forEach((btnitem) => {
           if (playerthree.countchecker === 0) {
             e.target.style.color = "red";
             getinputtext.disabled = true;
+            getinputtext.value = "Number Taken";
             e.target.style.cursor = "not-allowed";
           }
         } else {
