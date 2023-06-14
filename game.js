@@ -207,7 +207,7 @@ function modalelementreturn(winner) {
               <p class="card-text font-extra-bold">
                 🎉🎊🎉
               </p>
-              <p class="winner-el font-family-press font-extra-bold mt-5">${winner}</p>
+              <p class="winner-el font-family-press font-medium mt-5">${winner}</p>
             </div>
           </div>
         </div>
