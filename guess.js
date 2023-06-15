@@ -29,44 +29,46 @@ let link = false;
 let i = 0;
 let track = false;
 function btnclick() {
-  const playerchecker = parseInt(resultel.textContent.split(" ")[2]);
-  if (playerchecker === 1) {
-    if (player[i].click === false) {
-      player[i].click = true;
-      player[i].result = parseInt(input.value);
-      input.value = "";
-      track = true;
-      player[i].count = 0;
-      i++;
-      render(i);
-    }
-  } else {
-    if (player[i].count > 0 && player[i].click === false) {
-      if (player[0].result === parseInt(input.value)) {
+  if (input.value.trim()) {
+    const playerchecker = parseInt(resultel.textContent.split(" ")[2]);
+    if (playerchecker === 1) {
+      if (player[i].click === false) {
         player[i].click = true;
         player[i].result = parseInt(input.value);
         input.value = "";
+        track = true;
         player[i].count = 0;
-        if (i < 2) {
-          i++;
-          render(i);
-        }
-      } else {
-        player[i].count--;
-        input.value = "";
-        if (player[i].count === 0) {
+        i++;
+        render(i);
+      }
+    } else {
+      if (player[i].count > 0 && player[i].click === false) {
+        if (player[0].result === parseInt(input.value)) {
           player[i].click = true;
-
+          player[i].result = parseInt(input.value);
+          input.value = "";
+          player[i].count = 0;
           if (i < 2) {
             i++;
             render(i);
           }
+        } else {
+          player[i].count--;
+          input.value = "";
+          if (player[i].count === 0) {
+            player[i].click = true;
+
+            if (i < 2) {
+              i++;
+              render(i);
+            }
+          }
         }
       }
     }
+    pel.textContent = `You have now ${player[i].count} chance`;
+    winnerChecker();
   }
-  pel.textContent = `You have now ${player[i].count} chance`;
-  winnerChecker();
 }
 
 function render(number) {
