@@ -105,17 +105,16 @@ const playerone = new playerclass(playerdata[1]);
 const playertwo = new playerclass(playerdata[2]);
 const playerthree = new playerclass(playerdata[3]);
 
-playerone.descirptionvaluerender();
-playertwo.descirptionvaluerender();
-playerthree.descirptionvaluerender();
-
-function render() {
+function render(playerone, playertwo, playerthree) {
+  playerone.descirptionvaluerender();
+  playertwo.descirptionvaluerender();
+  playerthree.descirptionvaluerender();
   const text =
     playerone.playerhtml() + playertwo.playerhtml() + playerthree.playerhtml();
   row.innerHTML = text;
 }
 
-render();
+render(playerone, playertwo, playerthree);
 
 const btn = document.querySelectorAll("i");
 let valueoneinputcheck = false;
@@ -199,8 +198,12 @@ function modalelementreturn(winner) {
   const modalelement = document.querySelector(".modal-element");
   return (modalelement.innerHTML = `
   <div class="modal-custome-design">
+  
       <div class="container">
         <div>
+        <div class="d-flex justify-content-end">
+        <i class="fa-solid fa-xmark"></i>
+        </div>
           <div class="card border-warning mb-3 text-center" >
             <div class="card-body">
               <h5 class="card-title font-family-press font-extra-bold mt-5">Winner</h5>
@@ -215,3 +218,10 @@ function modalelementreturn(winner) {
     </div>
   `);
 }
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList[1] === "fa-xmark") {
+    document.querySelector(".modal-element").style.display = "none";
+    document.location.reload();
+  }
+});
