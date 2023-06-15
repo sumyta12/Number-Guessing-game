@@ -87,7 +87,7 @@ function playerclass(data) {
             <div class="d-flex mt-4">
              
                <input
-                 type="email"
+                 type="text"
                  class="form-control"
                  placeholder="Put number between 1 - 9" />
                  <i class="ms-3 fa-solid fa-paper-plane" id="${playername}"></i>
